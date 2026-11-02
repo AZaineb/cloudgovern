@@ -1,0 +1,76 @@
+/* ===== Page de connexion ===== */
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #e2e8f0;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #16233b;
+  border: 1px solid #25365a;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+input {
+  background: #0b1220;
+  border: 1px solid #25365a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+a {
+  color: #94a3b8;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    padding: 12px;
+  }
+}

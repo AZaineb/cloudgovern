@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vue d'ensemble - CloudGovern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
+<div class="layout">
+<aside class="sidebar">
+<div class="brand"><img src="images/logo.svg" alt="">CloudGovern</div>
+<nav aria-label="Navigation principale">
+    <ul class="menu">
+        <li><a href="index.html" class="active" aria-current="page">Vue d'ensemble</a></li>
+        <li><a href="pages/ressources.html">Ressources</a></li>
+        <li><a href="pages/abonnements.html">Abonnements</a></li>
+        <li><a href="pages/couts.html">Coûts</a></li>
+        <li><a href="pages/login.html">Connexion</a></li>
+    </ul>
+</nav>
+<div class="side-foot">Fournisseur : Microsoft Azure<br>Plan : Entreprise</div>
+</aside>
+<main class="main">
+<header class="topbar">
+<h1>Vue d'ensemble</h1>
+<input class="search" id="search" type="search" placeholder="Rechercher une ressource" aria-label="Rechercher">
+<label for="nav-toggle" class="burger">Menu</label>
+<div class="avatar" title="Administrateur">AD</div>
+</header>
+<div class="livebar">
+<label><input type="checkbox" id="live"> Actualisation automatique (5 s)</label>
+<span id="stamp" role="status"></span>
+</div>
+<section class="kpis" aria-label="Indicateurs clés">
+<div class="card kpi"><small>Ressources Azure</small><strong id="k-res">0</strong></div>
+<div class="card kpi violet"><small>Abonnements</small><strong id="k-sub">0</strong></div>
+<div class="card kpi orange"><small>Coût du mois</small><strong id="k-cost">0</strong></div>
+<div class="card kpi vert"><small>VM en cours</small><strong id="k-vm">0</strong></div>
+<div class="card kpi rouge"><small>Alertes ouvertes</small><strong id="k-alerts">0</strong></div>
+<div class="card kpi cyan"><small>Économies possibles</small><strong>820 $</strong></div>
+</section>
+<section class="grid-2">
+<div class="card"><h2>Coûts sur 6 mois ($)</h2><div class="chart-box"><canvas id="cost-chart" role="img" aria-label="Coûts mensuels sur 6 mois"></canvas></div></div>
+<div class="card"><h2>Ressources par type</h2><div class="donut-box"><canvas id="type-chart" role="img" aria-label="Répartition des ressources par type"></canvas></div><ul class="legend" id="type-legend"></ul></div>
+</section>
+<section class="grid-2">
+<div class="card"><h2>Ressources récentes</h2>
+<div class="table-wrap"><table><thead><tr><th>Nom</th><th>Type</th><th>Groupe de ressources</th><th>Région</th><th>État</th><th>Tag</th><th>Coût/mois</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+<div class="card"><h2>Budget mensuel</h2>
+<div class="row-p"><p><span id="budget-text"></span><span id="budget-pct"></span></p><div class="progress" id="budget-bar"><div></div></div></div>
+<h2>Alertes</h2><ul class="alerts" id="alerts"></ul></div>
+</section>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script type="module" src="js/index.js"></script>
+</body>
+</html>

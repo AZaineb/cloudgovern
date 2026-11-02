@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coûts - CloudGovern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/couts.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
+<div class="layout">
+
+<aside class="sidebar">
+<div class="brand"><img src="../images/logo.svg" alt="">CloudGovern</div>
+
+<nav aria-label="Navigation principale">
+    <ul class="menu">
+        <li><a href="../index.html">Vue d'ensemble</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="abonnements.html">Abonnements</a></li>
+        <li><a href="couts.html" class="active" aria-current="page">Coûts</a></li>
+        <li><a href="login.html">Connexion</a></li>
+    </ul>
+</nav>
+
+<div class="side-foot">Fournisseur : Microsoft Azure<br>Plan : Entreprise</div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<h1>Coûts</h1>
+<input class="search" id="search" type="search" placeholder="Rechercher une ressource" aria-label="Rechercher">
+<label for="nav-toggle" class="burger">Menu</label>
+<div class="avatar" title="Administrateur">AD</div>
+</header>
+<div class="livebar">
+<label><input type="checkbox" id="live"> Actualisation automatique (5 s)</label>
+<span id="stamp" role="status"></span>
+</div>
+<section class="grid-2"><div class="card"><div class="card-head"><h2>Coûts mensuels ($)</h2><select id="chart-type" aria-label="Type de graphique"><option value="bar">Barres</option><option value="line">Courbe</option></select></div><div class="chart-box"><canvas id="cost-chart" role="img" aria-label="Coûts mensuels"></canvas></div></div><div class="card"><h2>Par service</h2><div id="services"></div></div></section><h2>Recommandations (820 $ par mois)</h2><br><section class="grid-3"><div class="card reco"><strong>120 $/mois</strong>Supprimer 3 VM désallouées</div><div class="card reco"><strong>45 $/mois</strong>Redimensionner une VM sous-utilisée</div><div class="card reco"><strong>210 $/mois</strong>Réserver le cluster AKS 1 an</div><div class="card reco"><strong>130 $/mois</strong>Archiver le stockage froid</div><div class="card reco"><strong>315 $/mois</strong>Éteindre le dev la nuit</div></section>
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script type="module" src="../js/couts.js"></script>
+</body>
+</html>

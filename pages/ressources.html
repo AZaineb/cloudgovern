@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ressources - CloudGovern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/ressources.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
+<div class="layout">
+<aside class="sidebar">
+<div class="brand"><img src="../images/logo.svg" alt="">CloudGovern</div>
+<nav aria-label="Navigation principale">
+    <ul class="menu">
+        <li><a href="../index.html">Vue d'ensemble</a></li>
+        <li><a href="ressources.html" class="active" aria-current="page">Ressources</a></li>
+        <li><a href="abonnements.html">Abonnements</a></li>
+        <li><a href="couts.html">Coûts</a></li>
+        <li><a href="login.html">Connexion</a></li>
+    </ul>
+</nav>
+<div class="side-foot">Fournisseur : Microsoft Azure<br>Plan : Entreprise</div>
+</aside>
+<main class="main">
+
+<header class="topbar">
+<h1>Ressources</h1>
+<input class="search" id="search" type="search" placeholder="Rechercher une ressource" aria-label="Rechercher">
+<label for="nav-toggle" class="burger">Menu</label>
+<div class="avatar" title="Administrateur">AD</div>
+</header>
+<div class="livebar">
+<label><input type="checkbox" id="live"> Actualisation automatique (5 s)</label>
+<span id="stamp" role="status"></span>
+</div>
+<div class="card"><div class="filters"><select id="f-sub" aria-label="Abonnement"><option value="">Tous les abonnements</option><option>Production</option><option>Développement</option><option>Test</option></select><select id="f-region" aria-label="Région"><option value="">Toutes les régions</option><option>West Europe</option><option>North Europe</option><option>France Central</option><option>East US</option></select><select id="f-state" aria-label="État"><option value="">Tous les états</option><option value="running">En cours</option><option value="warning">Alerte</option><option value="stopped">Arrêtée</option></select><button type="button" class="btn" id="reset">Réinitialiser</button><button type="button" class="btn" id="csv">Exporter en CSV</button></div>
+<p id="count" class="muted"></p>
+<div class="table-wrap"><table><thead><tr><th data-col="name" aria-sort="none"><button type="button" class="sort">Nom</button></th><th data-col="type" aria-sort="none"><button type="button" class="sort">Type</button></th><th data-col="group" aria-sort="none"><button type="button" class="sort">Groupe de ressources</button></th><th data-col="region" aria-sort="none"><button type="button" class="sort">Région</button></th><th data-col="state" aria-sort="none"><button type="button" class="sort">État</button></th><th data-col="env" aria-sort="none"><button type="button" class="sort">Tag</button></th><th data-col="cost" aria-sort="none"><button type="button" class="sort">Coût/mois</button></th></tr></thead><tbody id="rows"></tbody></table></div></div>
+</main>
+</div>
+<script type="module" src="../js/ressources.js"></script>
+</body>
+</html>

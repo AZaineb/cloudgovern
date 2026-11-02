@@ -1,0 +1,437 @@
+/* ===== Mise en page générale ===== */
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #e2e8f0;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+aside {
+  background: #0f1a2e;
+  border-right: 1px solid #25365a;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  color: #94a3b8;
+}
+
+.menu a:hover {
+  background: #16233b;
+  color: white;
+}
+
+.menu a.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.side-foot {
+  margin-top: auto;
+  padding: 12px;
+  border: 1px solid #25365a;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ===== Contenu principal et en-tête ===== */
+main {
+  padding: 24px 32px;
+  min-width: 0;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.search {
+  background: #16233b;
+  border: 1px solid #25365a;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #e2e8f0;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger {
+  display: none;
+  padding: 8px 12px;
+  border: 1px solid #25365a;
+  border-radius: 8px;
+}
+
+.card {
+  background: #16233b;
+  border: 1px solid #25365a;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.card h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+/* ===== Cartes KPI ===== */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.kpi {
+  border-left: 4px solid #3b82f6;
+}
+
+.kpi strong {
+  display: block;
+  font-size: 28px;
+}
+
+.violet { border-color: #8b5cf6; }
+.orange { border-color: #f59e0b; }
+.vert { border-color: #22c55e; }
+.rouge { border-color: #ef4444; }
+.cyan { border-color: #06b6d4; }
+
+/* ===== Grilles ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* ===== Graphique en barres ===== */
+.bars-wrap {
+  padding-bottom: 26px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 200px;
+  padding-top: 20px;
+}
+
+.bars div {
+  flex: 1;
+  position: relative;
+  background: #3b82f6;
+  border-radius: 6px 6px 0 0;
+}
+
+.bars span {
+  position: absolute;
+  bottom: -22px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.bars em {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+}
+
+/* ===== Donut (conic-gradient) ===== */
+.donut {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(#3b82f6 0 28.4%, #8b5cf6 28.4% 49.3%, #22c55e 49.3% 61.5%, #f59e0b 61.5% 71%, #06b6d4 71% 79.1%, #ec4899 79.1% 83.2%, #64748b 83.2% 100%);
+}
+
+.donut::after { /* ajout de petit cercle au centre*/
+  content: "";
+  position: absolute;
+  inset: 28%;
+  background: #16233b;
+  border-radius: 50%;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+
+/* ===== Barres de progression ===== */
+.row-p {
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.row-p p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 6px;
+}
+
+.progress {
+  background: #0b1220;
+  border-radius: 99px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: #3b82f6;
+}
+
+.progress.w div {
+  background: #f59e0b;
+}
+
+/* ===== Tableaux ===== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #25365a;
+  white-space: nowrap;
+}
+
+th {
+  color: #94a3b8;
+}
+
+tbody tr:hover {
+  background: #1b2c4a;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', Consolas, monospace;
+}
+
+/* ===== Badges d'état ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  border: 1px solid;
+}
+
+.ok { color: #22c55e; }
+.warn { color: #f59e0b; }
+.danger { color: #ef4444; }
+.tag { color: #94a3b8; }
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* ===== Liste d'alertes ===== */
+.alerts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alerts li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #25365a;
+  font-size: 14px;
+}
+
+.alerts time {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* ===== Responsive ===== */
+.grid-2 {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid-2 { grid-template-columns: minmax(0, 1fr); 
+  
+  }
+}
+@media screen and (max-width: 480px) {
+  .alerts li { grid-template-columns: 1fr auto; }
+  .alerts li .badge { grid-column: 1 / -1; justify-self: start; }
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .nav-toggle:checked ~ .layout aside {
+    display: flex;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .search {
+    display: none;
+  }
+
+  main {
+    padding: 16px;
+  }
+}
+
+
+/* ===== Actualisation automatique ===== */
+.livebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.muted {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ===== Accessibilité : focus visible et animations réduites ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}
+
+
+/* ===== Zones des graphiques Chart.js ===== */
+.chart-box {
+  position: relative;
+  height: 230px;
+}
+
+.donut-box {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 14px;
+}

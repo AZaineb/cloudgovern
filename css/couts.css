@@ -1,0 +1,321 @@
+/* ===== Mise en page générale ===== */
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #e2e8f0;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr; /*The second column always takes everything that remains.*/
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+aside {
+  background: #0f1a2e;
+  border-right: 1px solid #25365a;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  color: #94a3b8;
+}
+
+.menu a:hover {
+  background: #16233b;
+  color: white;
+}
+
+.menu a.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.side-foot {
+  margin-top: auto;
+  padding: 12px;
+  border: 1px solid #25365a;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ===== Contenu principal et en-tête ===== */
+main {
+  padding: 24px 32px;
+  min-width: 0;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.search {
+  background: #16233b;
+  border: 1px solid #25365a;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #e2e8f0;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger {
+  display: none;
+  padding: 8px 12px;
+  border: 1px solid #25365a;
+  border-radius: 8px;
+}
+
+.card {
+  background: #16233b;
+  border: 1px solid #25365a;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.card h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+/* ===== Grilles ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* ===== Graphique en barres ===== */
+.bars-wrap {
+  padding-bottom: 26px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 200px;
+  padding-top: 20px;
+}
+
+.bars div {
+  flex: 1;
+  position: relative;
+  background: #3b82f6;
+  border-radius: 6px 6px 0 0;
+}
+
+.bars span {
+  position: absolute;
+  bottom: -22px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.bars em {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+}
+
+/* ===== Barres de progression ===== */
+.row-p {
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.row-p p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 6px;
+}
+
+.progress {
+  background: #0b1220;
+  border-radius: 99px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: #3b82f6;
+}
+
+.progress.w div {
+  background: #f59e0b;
+}
+
+/* ===== Recommandations ===== */
+.reco {
+  border-top: 3px solid #22c55e;
+}
+
+.reco strong {
+  display: block;
+  font-size: 22px;
+  color: #22c55e;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 1024px) {
+  .grid-2 {/*tablet*/
+    grid-template-columns: 1fr;
+  }/*When the window is 1024 px wide or less, .grid-2 goes from two columns (2fr 1fr) to one column, so the cards stack*/
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .nav-toggle:checked ~ .layout aside {
+    display: flex;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .search {
+    display: none;
+  }
+
+  main {
+    padding: 16px;
+  }
+}
+
+
+/* ===== Actualisation automatique ===== */
+.livebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.muted {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ===== Accessibilité : focus visible et animations réduites ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}
+
+
+/* ===== Zones des graphiques Chart.js ===== */
+.chart-box {
+  position: relative;
+  height: 230px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.card .card-head h2 {
+  margin: 0;
+}
+
+.card-head select {
+  background: #0b1220;
+  color: #e2e8f0;
+  border: 1px solid #25365a;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
